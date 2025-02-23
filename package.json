@@ -1,6 +1,13 @@
 {
   "version": "0.1.0",
-  "keywords": [],
+  "keywords": [
+    "strapi",
+    "strapi-plugin",
+    "required",
+    "relation",
+    "field",
+    "relation-validator"
+  ],
   "type": "commonjs",
   "exports": {
     "./package.json": "./package.json",
