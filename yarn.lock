@@ -2419,7 +2419,7 @@
     sharp "0.32.6"
     yup "0.32.9"
 
-"@strapi/utils@5.10.3":
+"@strapi/utils@5.10.3", "@strapi/utils@^5.10.3":
   version "5.10.3"
   resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-5.10.3.tgz#b4c7bed2e650ee8f382197e3209437745cdc8ec2"
   integrity sha512-FUp0UXGmEUpGtDGAHqW/97FbIfM0vxAuokju6/nNgIsKnfv923kDkZsCFOjoQfxcljr+Tj1P0oSD/w63bcUYSg==
