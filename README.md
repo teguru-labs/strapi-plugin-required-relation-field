@@ -6,8 +6,62 @@ Enforces required relation fields in Strapi to be non-empty on save or publish.
 
 ## Installation
 
+You just need to install the `strapi-plugin-required-relation-field` package via `npm` or `yarn` at the root of your Strapi project:
+
+**npm:**
+
+```bash
+npm i strapi-plugin-required-relation-field
+```
+
+**yarn:**
+
 ```bash
 yarn add strapi-plugin-required-relation-field
+```
+
+## Usage
+
+You just set `required: true` for relations in your schemas, and everything will work out-of-the-box. For example:
+
+```json
+# src/api/story-reaction/content-types/story-reaction/schema.json
+{
+  "kind": "collectionType",
+  "collectionName": "story_reactions",
+  "info": {
+    "singularName": "story-reaction",
+    "pluralName": "story-reactions",
+    "displayName": "Story Reaction",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "story": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::story.story",
+      "inversedBy": "storyReactions",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "storyReactions",
+      "required": true
+    },
+    "reaction": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::reaction.reaction",
+      "inversedBy": "storyReactions",
+      "required": true
+    }
+  }
+}
 ```
 
 ## Development
