@@ -3,7 +3,7 @@ name: release
 on:
   push:
     tags:
-      - "v*"
+      - 'v*'
 
 jobs:
   publish-npm:
@@ -24,15 +24,15 @@ jobs:
     permissions:
       contents: write
     steps:
-    - uses: actions/checkout@v4
-    - uses: ncipollo/release-action@v1
-      with:
-        tag: ${{ github.ref }}
-        name: Release ${{ github.ref }}
-        body: |
-            ## Changes in this release
-            Auto-generated release notes based on commit messages.
-        draft: false
-        prerelease: false
-        generateReleaseNotes: true
-        token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v4
+      - name: Extract version
+        run: echo "VERSION=$(jq -r .version package.json)" >> $GITHUB_ENV
+      - uses: ncipollo/release-action@v1
+        with:
+          tag: v${{ env.VERSION }}
+          name: v${{ env.VERSION }}
+          draft: false
+          prerelease: false
+          allowUpdates: true
+          generateReleaseNotes: true
+          token: ${{ secrets.GITHUB_TOKEN }}
