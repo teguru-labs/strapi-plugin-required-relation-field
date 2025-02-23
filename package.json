@@ -1,0 +1,56 @@
+{
+  "version": "0.0.0",
+  "keywords": [],
+  "type": "commonjs",
+  "exports": {
+    "./package.json": "./package.json",
+    "./strapi-server": {
+      "types": "./dist/server/src/index.d.ts",
+      "source": "./server/src/index.ts",
+      "import": "./dist/server/index.mjs",
+      "require": "./dist/server/index.js",
+      "default": "./dist/server/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "strapi-plugin build",
+    "watch": "strapi-plugin watch",
+    "watch:link": "strapi-plugin watch:link",
+    "verify": "strapi-plugin verify",
+    "test:ts:back": "run -T tsc -p server/tsconfig.json"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@strapi/strapi": "^5.10.3",
+    "@strapi/sdk-plugin": "^5.3.2",
+    "prettier": "^3.5.2",
+    "@strapi/typescript-utils": "^5.10.3",
+    "typescript": "^5.7.3"
+  },
+  "peerDependencies": {
+    "@strapi/strapi": "^5.10.3",
+    "@strapi/sdk-plugin": "^5.3.2"
+  },
+  "strapi": {
+    "kind": "plugin",
+    "name": "strapi-plugin-required-relation-field",
+    "displayName": "Required Relation Field",
+    "description": "Enforces required relation fields in Strapi to be non-empty on save or publish"
+  },
+  "name": "strapi-plugin-required-relation-field",
+  "description": "Enforces required relation fields in Strapi to be non-empty on save or publish",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/teguru-labs/strapi-plugin-required-relation-field.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teguru-labs/strapi-plugin-required-relation-field/issues"
+  },
+  "homepage": "https://github.com/teguru-labs/strapi-plugin-required-relation-field#readme",
+  "author": "\u0017\u0017Teguru Co., Ltd <oss@teguru.com>",
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}
