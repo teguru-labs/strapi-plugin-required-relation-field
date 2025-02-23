@@ -1,7 +1,7 @@
 # Strapi Plugin: Required Relation Field
 
-[![NPM version](https://img.shields.io/npm/v/strapi-plugin-required-relation-field.svg)](https://www.npmjs.com/package/strapi-plugin-required-relation-field)
 [![ci](https://github.com/teguru-labs/strapi-plugin-required-relation-field/actions/workflows/ci.yaml/badge.svg)](https://github.com/teguru-labs/strapi-plugin-required-relation-field/actions/workflows/ci.yaml)
+[![NPM version](https://img.shields.io/npm/v/strapi-plugin-required-relation-field.svg)](https://www.npmjs.com/package/strapi-plugin-required-relation-field)
 
 Enforces required relation fields in Strapi to be non-empty on save or publish.
 
