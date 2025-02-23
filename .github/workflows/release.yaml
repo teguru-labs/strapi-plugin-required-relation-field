@@ -6,21 +6,7 @@ on:
       - 'v*'
 
 jobs:
-  publish-npm:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          registry-url: https://registry.npmjs.org
-      - run: yarn install
-      - run: yarn build
-      - run: yarn publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
   create-release:
-    needs: publish-npm
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -38,3 +24,16 @@ jobs:
           skipIfReleaseExists: true
           generateReleaseNotes: true
           token: ${{ secrets.GITHUB_TOKEN }}
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+      - run: yarn install
+      - run: yarn build
+      - run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
