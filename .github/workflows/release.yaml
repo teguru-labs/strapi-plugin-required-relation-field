@@ -19,3 +19,20 @@ jobs:
       - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+  create-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+    - uses: ncipollo/release-action@v1
+      with:
+        tag: ${{ github.ref }}
+        name: Release ${{ github.ref }}
+        body: |
+            ## Changes in this release
+            Auto-generated release notes based on commit messages.
+        draft: false
+        prerelease: false
+        generateReleaseNotes: true
+        token: ${{ secrets.GITHUB_TOKEN }}
