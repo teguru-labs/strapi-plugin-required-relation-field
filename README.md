@@ -22,7 +22,7 @@ yarn add strapi-plugin-required-relation-field
 
 ## Usage
 
-You just set `required: true` for relations in your schemas, and everything will work out-of-the-box. For example:
+Simply set `required: true` for relations in your schemas, and everything will work out-of-the-box. For example:
 
 ```json
 # src/api/story-reaction/content-types/story-reaction/schema.json
