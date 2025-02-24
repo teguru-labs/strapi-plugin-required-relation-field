@@ -38,10 +38,16 @@ async function validateRelations(event: Event, strapi: Core.Strapi) {
     const { fieldName: field } = relation;
     const data = event.params.data[field];
 
-    const failedMsg = `Field '${field}' cannot be empty.`;
+    const failedMsg = `Please ensure that the '${field}' field is not left empty.`;
     const validationError = new errors.ValidationError(failedMsg, {
-      path: field,
-      message: failedMsg,
+      errors: [
+        {
+          path: [field],
+          message: 'This value is required.',
+          type: 'ValidationError',
+          value: null,
+        },
+      ],
     });
 
     // When creating/publishing, check if the relation is empty:
