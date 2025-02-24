@@ -44,8 +44,10 @@ async function validateRelations(event: Event, strapi: Core.Strapi) {
       message: failedMsg,
     });
 
-    // When creating, check if the relation is empty
-    if (event.action === 'beforeCreate' && isEmpty(get(data, 'connect'))) {
+    // When creating/publishing, check if the relation is empty:
+    const isEmptyOnCreate = event.action === 'beforeCreate' && isEmpty(get(data, 'connect'));
+    const isEmptyOnPublish = event.action === 'beforeCreate' && isEmpty(get(data, 'set'));
+    if (isEmptyOnCreate && isEmptyOnPublish) {
       throw validationError;
     }
 
