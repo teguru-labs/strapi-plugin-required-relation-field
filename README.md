@@ -7,6 +7,11 @@ Enforces required relation fields in Strapi to be non-empty on save or publish.
 
 ![Preview](./images/content.gif)
 
+## Requirements
+
+- Strapi v5.x (supported)
+- Strapi v4.x (untested)
+
 ## Installation
 
 You just need to install the `strapi-plugin-required-relation-field` package via `npm` or `yarn` at the root of your Strapi project:
