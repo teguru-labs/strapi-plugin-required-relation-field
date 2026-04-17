@@ -38,7 +38,7 @@
     "@strapi/typescript-utils": "^5.10.3",
     "@strapi/utils": "^5.10.3",
     "prettier": "^3.5.2",
-    "typescript": "^5.7.3"
+    "typescript": "^6.0.0"
   },
   "peerDependencies": {
     "@strapi/sdk-plugin": "^5.3.2",
