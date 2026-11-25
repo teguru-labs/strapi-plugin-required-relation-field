@@ -33,7 +33,7 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@strapi/sdk-plugin": "^5.3.2",
+    "@strapi/sdk-plugin": "^6.0.0",
     "@strapi/strapi": "^5.10.3",
     "@strapi/typescript-utils": "^5.10.3",
     "@strapi/utils": "^5.10.3",
